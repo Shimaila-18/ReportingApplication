@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <title>Survey</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="logo_item">
+            <i class="bx bx-menu" id="sidebarOpen"></i>
+            <img src="images/logo1.png" alt=""></i>Visteon EngageHub
+        </div>
+        <div class="navbar_content">
+            <ul class="firstul">
+                <li class="firstli"><a class="firsta" href="/">Home</a></li>
+                <li class="firstli"><a class="firsta" href="/profile">Profile</a></li>
+                <li class="firstli"><a class="firsta" href="/auth/logout">Logout</a></li>
+                <i class="bi bi-grid"></i>
+                <i class='bx bx-sun' id="darkLight"></i>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- sidebar -->
+    <nav class="sidebar">
+        <div class="menu_content">
+            <ul class="menu_items">
+                <div class="menu_title menu_dahsboard"></div>
+                <!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+                <!-- start -->
+                <li class="item">
+                    <div href="#" class="nav_link submenu_item">
+                        <span class="navlink_icon">
+                            <i class="bx bx-home-alt"></i>
+                        </span>
+                        <span class="navlink">Survey</span>
+                        <i class="bx bx-chevron-right arrow-left"></i>
+                    </div>
+
+                    <ul class="menu_items submenu">
+                        <a href="/survey" class="nav_link sublink">Participate in Survey</a>
+                    </ul>
+                </li>
+
+                <li class="item">
+                    <div href="#" class="nav_link submenu_item">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-color"></i>
+                        </span>
+                        <span class="navlink">Analytics</span>
+                        <i class="bx bx-chevron-right arrow-left"></i>
+                    </div>
+
+                    <ul class="menu_items submenu">
+                        <a href="/charts" class="nav_link sublink">Overview</a>
+                        <a href="/SepChart" class="nav_link sublink">Detailed Data Charts</a>
+
+                </li>
+                <!-- end -->
+            </ul>
+
+            <ul class="menu_items">
+                <div class="menu_title menu_setting"></div>
+                <li class="item">
+                    <a href="/profile" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bx-user-circle"></i>
+                        </span>
+                        <span class="navlink">Profile</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="/contact" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxl-gmail"></i>
+                        </span>
+                        <span class="navlink">Contact Us</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bx-cog"></i>
+                        </span>
+                        <span class="navlink">Setting</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Sidebar Open / Close -->
+            <div class="bottom_content">
+                <div class="bottom expand_sidebar">
+                    <span> Expand</span>
+                    <i class='bx bx-log-in'></i>
+                </div>
+                <div class="bottom collapse_sidebar">
+                    <span> Collapse</span>
+                    <i class='bx bx-log-out'></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- //extra information -->
+    <!-- Content for the Profile Page -->
+    <div class="box">
+        <h1 style="margin-left: 200px; font-family: 'boxicons'; font-style: italic; ">" You Matter : Share Your Feedback
+            "</h1>
+
+        <form id="form" action="/auth/survey" method="POST">
+
+            <!-- Details -->
+            <!-- time -->
+            <div class="form-control">
+                <label for="time" id="label-time">
+                    1. Submission Date
+                </label>
+                <input type="date" id="time" name="time" placeholder="Enter Submission date" />
+            </div>
+
+            <div class="form-control">
+                <label for="department" id="label-department">
+                    2. Department
+                </label>
+
+                <!-- Dropdown options -->
+                <select name="department" id="department">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="HR">HR</option>
+                    <option value="IT">IT</option>
+                    <option value="Sales and Marketing">Sales and Marketing</option>
+                    <option value="Finance and Accounting">Finance and Accounting</option>
+                    <option value="Production">Production</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-control">
+                <label>3. Employee Engagement and Job Satisfaction</label>
+                <div class="radio-group">
+                    <!-- Input Type Radio Button -->
+                    <label for="Engagement-1"><input type="radio" id="Engagement-1" name="Engagement"
+                            value="1">1</input></label>
+                    <label for="Engagement-2"><input type="radio" id="Engagement-2" name="Engagement"
+                            value="2">2</input></label>
+                    <label for="Engagement-3"><input type="radio" id="Engagement-3" name="Engagement"
+                            value="3">3</input></label>
+                    <label for="Engagement-4"><input type="radio" id="Engagement-4" name="Engagement"
+                            value="4">4</input></label>
+                    <label for="Engagement-5"><input type="radio" id="Engagement-5" name="Engagement"
+                            value="5">5</input></label>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <label>4. Communication and Collaboration</label>
+                <div class="radio-group">
+                    <!-- Input Type Radio Button -->
+                    <label for="Communication-1"><input type="radio" id="Communication-1" name="Communication"
+                            value="1">1</input></label>
+                    <label for="Communication-2"><input type="radio" id="Communication-2" name="Communication"
+                            value="2">2</input></label>
+                    <label for="Communication-3"><input type="radio" id="Communication-3" name="Communication"
+                            value="3">3</input></label>
+                    <label for="Communication-4"><input type="radio" id="Communication-4" name="Communication"
+                            value="4">4</input></label>
+                    <label for="Communication-5"><input type="radio" id="Communication-5" name="Communication"
+                            value="5">5</input></label>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <label>5. Leadership and Management </label>
+                <div class="radio-group">
+                    <!-- Input Type Radio Button -->
+                    <label for="Leadership-1"><input type="radio" id="Leadership-1" name="Leadership"
+                            value="1">1</input></label>
+                    <label for="Leadership-2"><input type="radio" id="Leadership-2" name="Leadership"
+                            value="2">2</input></label>
+                    <label for="Leadership-3"><input type="radio" id="Leadership-3" name="Leadership"
+                            value="3">3</input></label>
+                    <label for="Leadership-4"><input type="radio" id="Leadership-4" name="Leadership"
+                            value="4">4</input></label>
+                    <label for="Leadership-5"><input type="radio" id="Leadership-5" name="Leadership"
+                            value="5">5</input></label>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <label>6. Work-Life Balance</label>
+                <div class="radio-group">
+                    <!-- Input Type Radio Button -->
+                    <label for="Balance-1"><input type="radio" id="Balance-1" name="Balance" value="1">1</input></label>
+                    <label for="Balance-2"><input type="radio" id="Balance-2" name="Balance" value="2">2</input></label>
+                    <label for="Balance-3"><input type="radio" id="Balance-3" name="Balance" value="3">3</input></label>
+                    <label for="Balance-4"><input type="radio" id="Balance-4" name="Balance" value="4">4</input></label>
+                    <label for="Balance-5"><input type="radio" id="Balance-5" name="Balance" value="5">5</input></label>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <label>7. Overall Satisfaction</label>
+                <div class="radio-group">
+                    <!-- Input Type Radio Button -->
+                    <label for="Overall-1"><input type="radio" id="Overall-1" name="Overall" value="1">1</input></label>
+                    <label for="Overall-2"><input type="radio" id="Overall-2" name="Overall" value="2">2</input></label>
+                    <label for="Overall-3"><input type="radio" id="Overall-3" name="Overall" value="3">3</input></label>
+                    <label for="Overall-4"><input type="radio" id="Overall-4" name="Overall" value="4">4</input></label>
+                    <label for="Overall-5"><input type="radio" id="Overall-3" name="Overall" value="5">5</input></label>
+                </div>
+            </div>
+
+
+            <div class="form-control">
+                <label for="comment">
+                    8. Any comments or suggestions
+                </label>
+                <textarea name="comment" id="comment" placeholder="Enter your comment here"></textarea>
+            </div>
+
+            <!-- Multi-line Text Input Control -->
+            <button type="submit" value="submit" class="submit">
+                Submit
+            </button>
+        </form>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+</body>
+
+</html>
